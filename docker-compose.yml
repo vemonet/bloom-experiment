@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+  jupyterlab:
+    image: ghcr.io/maastrichtu-ids/jupyterlab:pytorch
+    volumes:
+    - ./:/workspace
+    # user: root
+    # ports:
+    #   - 8888:8888
+    ## Without password:
+    # command: "--ServerApp.token=''"
+    environment:
+      - JUPYTER_TOKEN=${PASSWORD:-password}
+      # - GRANT_SUDO=yes
+      ## Download repo:
+      # - GIT_URL=https://github.com/MaastrichtU-IDS/dsri-demo
+
+    # entrypoint: jupyter lab --allow-root --ip=0.0.0.0 --port=8888 --no-browser --config=/etc/jupyter/jupyter_notebook_config.py

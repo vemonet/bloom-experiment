@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+version = "0.0.1"
+name = "bloom-experiment"
+description = 'Experimenting with BLOOM LLM'
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+keywords = ["bloom", "llm"]
+authors = [
+  { name = "Vincent Emonet", email = "vincent.emonet@gmail.com" },
+]
+
+dependencies = [
+  "transformers",
+  "torch",
+  "torchaudio",
+  "torchvision",
+]
+
+
+[tool.hatch.envs.default.scripts]
+dev = "python src/predict.py {args}"
+
+
+[project.urls]
+Documentation = "https://github.com/vemonet/bloom-experiment#readme"
+Issues = "https://github.com/vemonet/bloom-experiment/issues"
+Source = "https://github.com/vemonet/bloom-experiment"
