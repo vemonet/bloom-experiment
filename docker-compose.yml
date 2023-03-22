@@ -6,6 +6,7 @@ services:
     image: ghcr.io/maastrichtu-ids/jupyterlab:pytorch
     volumes:
     - ./:/workspace
+    - /data/bloom-llm/huggingface-cache:/root/.cache/huggingface
     # user: root
     # ports:
     #   - 8888:8888
