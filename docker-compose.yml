@@ -15,12 +15,14 @@ services:
               capabilities: [gpu]
     volumes:
     - ./:/workspace
+    - /home/${USER:-p70060182}/.ssh:/root/.ssh
     - /data/bloom-llm/huggingface-cache:/root/.cache/huggingface
     environment:
       - JUPYTER_TOKEN=${PASSWORD:-password}
       - VIRTUAL_HOST=bloom.137.120.31.160.nip.io
       - LETSENCRYPT_HOST=bloom.137.120.31.160.nip.io
-      - VIRTUAL_PORT=8888
+      - VIRTUAL_PORT=22
+      # - VIRTUAL_PORT=8888
       # - GIT_URL=https://github.com/MaastrichtU-IDS/dsri-demo
     # ports:
     #   - 8888:8888
