@@ -1,6 +1,5 @@
 # 💐 Experimenting with BLOOM
 
-Change
 
 ## Installation
 
